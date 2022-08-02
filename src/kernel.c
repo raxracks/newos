@@ -7,9 +7,7 @@
 
 void kernel_main(void)
 {
-	vgat_bg = 0x1;
 	vgat_fill(vgat_bg);
-	vgat_rect(0, 24, 80, 1, 0x7);
 	vgat_print("Boot succeeded, starting initialization...\n");
 	vgat_print("Attempting to read from drive using ATAPI...\n\"");
 
@@ -34,8 +32,11 @@ void kernel_main(void)
 		}
 	}
 
-	vgat_print("\"\nSuccess!\n");
+	int i = 0;
 
 	while (1)
-		;
+	{
+		vgat_printf("hello %d\n", i);
+		i++;
+	}
 }

@@ -11,7 +11,7 @@ OBJ = ${C_SOURCES:.c=.o} ${ASM_SOURCES:.s=.o}
 all: ${NAME}.iso
 
 %.o: %.c
-	${CC} -c $< -o $@ -std=gnu99 -ffreestanding -O2 -Wall -Wextra -Iinclude
+	${CC} -c $< -o $@ -std=gnu99 -ffreestanding -O2 -Wall -Wextra -Iinclude -Ofast
 
 %.o: %.s
 	${AS} $< -o $@
